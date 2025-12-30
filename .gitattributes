@@ -1,0 +1,5 @@
+# Ignora a pasta de imagens do cálculo de linguagens
+training_samples/* linguist-vendored
+
+
+*.html linguist-detectable=false
