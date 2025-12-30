@@ -1,0 +1,5 @@
+First, I analyzed the dataset by looking at the types of characters and the size of the images. Then, I chose the DBSCAN algorithm because it performs clustering without needing to specify the number of clusters in advance. However, I later switched to HDBSCAN as it produced better results.
+
+I applied image preprocessing and dimensionality reduction to prepare the data for clustering, and this worked well after some adjustments. Still, I noticed that many images were being marked as noise. To address this, I used KNN to reassign these outliers to their nearest clusters. I chose a threshold value of 4.0 — lower values were treating too many important characters as noise, while higher values caused misclassifications.
+
+I also tried to relocate the remaining noise points by forming new groups with DBSCAN and reassigning them using KNN, but this didn’t work well. So, I ended up simply assigning each of those remaining points to a unique cluster, since most of them didn’t seem to belong to any existing cluster.
